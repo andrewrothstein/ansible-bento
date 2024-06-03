@@ -1,0 +1,60 @@
+---
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: Check for installation at {{ bento_exe }}
+  become: true
+  ansible.builtin.stat:
+    path: '{{ bento_exe }}'
+  changed_when: false
+  register: bento_binary
+- name: Download and install bento if necessary
+  when: not bento_binary.stat.exists
+  block:
+    - name: Downloading {{ bento_url }}
+      become: true
+      become_user: root
+      ansible.builtin.get_url:
+        url: '{{ bento_url }}'
+        dest: '{{ bento_tmp_archive }}'
+        mode: '644'
+        checksum: '{{ bento_checksum }}'
+    - name: Mkdir {{ bento_install_dir }}
+      become: true
+      become_user: root
+      ansible.builtin.file:
+        path: '{{ bento_install_dir }}'
+        state: directory
+        mode: '755'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
+    - name: Unarchive {{ bento_tmp_archive }}
+      become: true
+      become_user: root
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: '{{ bento_tmp_archive }}'
+        dest: '{{ bento_install_dir }}'
+        creates: '{{ bento_exe }}'
+  always:
+    - name: Rm -rf {{ bento_tmp_archive }}
+      become: true
+      become_user: root
+      ansible.builtin.file:
+        path: '{{ bento_tmp_archive }}'
+        state: absent
+- name: Linking {{ bento_link }}
+  become: true
+  become_user: root
+  ansible.builtin.file:
+    src: '{{ bento_exe }}'
+    dest: '{{ bento_link }}'
+    state: link

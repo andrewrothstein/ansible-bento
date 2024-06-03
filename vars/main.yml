@@ -1,0 +1,13 @@
+---
+# vars file for bento
+bento_os: '{{ ansible_system | lower }}'
+bento_arch: '{{ bento_arch_map[ansible_architecture] }}'
+bento_platform: '{{ bento_os }}_{{ bento_arch }}'
+bento_prefix: bento_{{ bento_ver }}_{{ bento_platform }}
+bento_archive: '{{ bento_prefix }}.{{ bento_archive_type | default("tar.gz") }}'
+bento_url: '{{ bento_mirror }}/v{{ bento_ver }}/{{ bento_archive }}'
+bento_checksum: '{{ bento_checksums[bento_ver][bento_platform] }}'
+bento_tmp_archive: '{{ bento_tmp_dir | default("/tmp") }}/{{ bento_archive }}'
+bento_install_dir: '{{ bento_parent_install_dir }}/{{ bento_prefix }}'
+bento_exe: '{{ bento_install_dir }}/bento'
+bento_link: '{{ bento_parent_install_dir }}/bin/bento'

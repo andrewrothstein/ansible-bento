@@ -1,0 +1,14 @@
+---
+- name: Testing andrewrothstein.bento role
+  hosts: all
+  tasks:
+    - name: Installing andrewrothstein.bento
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'bento --version'
+      ansible.builtin.command: bento --version
+      changed_when: false
+      register: 'bento_test_output'
+    - name: Output from 'bento --version'
+      ansible.builtin.debug:
+        msg: '{{ bento_test_output.stdout }}'
