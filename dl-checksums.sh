@@ -60,5 +60,5 @@ mirror() {
 
 dl_ver \
     "$(mirror "warpstreamlabs" "bento")" \
-    "${1:-1.0.1}" \
+    "${1:-1.0.2}" \
     "bento"

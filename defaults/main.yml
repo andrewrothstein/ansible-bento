@@ -1,6 +1,6 @@
 ---
 # defaults file for bento
-bento_ver: 1.0.1
+bento_ver: 1.0.2
 bento_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -44,3 +44,37 @@ bento_checksums:
     windows_amd64: sha256:3202edc1525798a757d1674728e047f3de239d874601215eb4b3d72ddd49f204
     # https://github.com/warpstreamlabs/bento/releases/download/v1.0.1/bento_1.0.1_windows_arm64.tar.gz
     windows_arm64: sha256:45a6fde0904484b439e60272ac24169f47dcdb17fb012e14276694608d8ebe51
+  # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_checksums.txt
+  '1.0.2':
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_darwin_amd64.tar.gz
+    darwin_amd64: sha256:67004281ca2405ab3379d10409c224b59f8d4d55a44ef2473f6c789960c942f6
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_darwin_arm64.tar.gz
+    darwin_arm64: sha256:13d0a98818da052f0a37c9de9bb949b7ae1e4b9d5ec42e963a1cd173858a8857
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_freebsd_amd64.tar.gz
+    freebsd_amd64: sha256:7914884b2ae4aacdba1761ee90c8e0f2b9fb5453d368d54cee315e4df9afda0b
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_freebsd_arm64.tar.gz
+    freebsd_arm64: sha256:fc6369ff63f9cc7dd368cffdc844b6ca3f4e058c48c461f915a0e7728e916a34
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_freebsd_armv6.tar.gz
+    freebsd_armv6: sha256:002bf90fa5b5720fee60ad5067c5c22ada84164d75f4c74436eb25bae4e14707
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_freebsd_armv7.tar.gz
+    freebsd_armv7: sha256:7264d55f7750ba40c0272215b701cc0856050397e766db0db43f5b6998dd6672
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_linux_amd64.tar.gz
+    linux_amd64: sha256:ad3b09882a3eb8082c63526bb3f87952b23895208be9e2a52fa109a521696551
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_linux_arm64.tar.gz
+    linux_arm64: sha256:e67e1caa8846f3a3641f017df1b18ab69f92ecece9f097ea07edeb2f625fe82f
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_linux_armv6.tar.gz
+    linux_armv6: sha256:ecb3b153e0e5aa8874654c291a714f25a889dfa12820ce3e8cc194ebf46c5d5a
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_linux_armv7.tar.gz
+    linux_armv7: sha256:c442e4c055e06b1457f8f9214ff667dbf634f3b047af226913c8d55d83260542
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_openbsd_amd64.tar.gz
+    openbsd_amd64: sha256:99e916cb443ed16ea691a1ad45aa7754b2ca347d315e03b6e751837800703862
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_openbsd_arm64.tar.gz
+    openbsd_arm64: sha256:7c3ad47b3a7c43598c6d87dacb3a9cb990ecf02f9c8634e55d30be06c06f5f24
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_openbsd_armv6.tar.gz
+    openbsd_armv6: sha256:530d2d36545e72513732c09ff9703d6b9a632a9e15cb31cd1cc375ad18f22104
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_openbsd_armv7.tar.gz
+    openbsd_armv7: sha256:e2b6e4c32e912116e3ea68a665f7f4caf0c9c27824930f4697f35f3d827ed868
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_windows_amd64.tar.gz
+    windows_amd64: sha256:cfc8bc14358413e217c066e0d78b6134d3dc23a8dac5e6590d901b9059171b4e
+    # https://github.com/warpstreamlabs/bento/releases/download/v1.0.2/bento_1.0.2_windows_arm64.tar.gz
+    windows_arm64: sha256:953c1d6730c79cb008c6b6659501739b65d4eb5237a7bd3bc3b7ccf4c1324b21
